@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <img src="media\MyTown Hub-.png" height="100" width="100">
+    <h1>Local Community Portal</h1>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="news.html">News</a>
+        <a href="events.html">Events</a>
+        <a href="business-directory.html">Business Directory</a>
+        <a href="forum.html">Forum</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+</header>
+
+<section>
+    <h2 class="section-title">Contact Us</h2>
+    <form id="forum-form">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required><br><br>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br><br>
+        <label for="message">Message:</label><br>
+        <textarea id="message" name="message" rows="4" cols="50" required></textarea><br><br>
+    
+        <!-- <button type="submit" id="submit-btn">Submit</button> -->
+    </form>
+    
+</section>
+
+<footer>
+    <p>&copy; 2024 Local Community Portal. All rights reserved.</p>
+    <p><a href="privacy-policy.html">Privacy Policy</a> | <a href="terms.html">Terms of Service</a></p>
+    <p>Follow us on social media: 
+        <a href="https://www.facebook.com/login/?next=https%3A%2F%2Fwww.facebook.com%2F">Facebook</a>, 
+        <a href="https://x.com/?lang=en">Twitter</a>, 
+        <a href="https://www.instagram.com/accounts/login/?next=https%3A%2F%2Fwww.instagram.com%2Frandom%2F&is_from_rle">Instagram</a>
+    </p>
+    
+</footer><br><br>
+<button type="submit" id="submit-btn"><a href="index.html">Submit</a></button>
+<script>
+    // Wait until the document is fully loaded
+    document.addEventListener('DOMContentLoaded', function() {
+        // Get the form and submit button
+        const form = document.getElementById('forum-form');
+        const submitButton = document.getElementById('submit-btn');
+
+        // Event listener for form submission
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();  // Prevent the form from submitting the traditional way
+
+            // Example of validation: check if the message is not empty
+            const username = document.getElementById('username').value.trim();
+            const message = document.getElementById('message').value.trim();
+
+            if (!username || !message) {
+                alert("Please fill out all fields.");
+            } else {
+                // If everything is valid, show a success message
+                alert("Your message has been successfully submitted.");
+                
+                // Optionally, clear the form fields
+                form.reset();
+            }
+        });
+
+        // Optional: You can add an event listener to the submit button if needed
+        submitButton.addEventListener('click', function() {
+            console.log('Submit button clicked');
+        });
+    });
+</script>
+
+</body>
+</html>
